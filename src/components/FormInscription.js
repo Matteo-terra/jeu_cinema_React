@@ -4,6 +4,16 @@ import { Input, Checkbox } from "@progress/kendo-react-inputs";
 import { DropDownList } from "@progress/kendo-react-dropdowns";
 import '../styles/FormStyle.css';
 import "@progress/kendo-theme-default/dist/all.css";
+import {Routes,
+  Route,
+  Link,
+  useNavigate,
+  useLocation,
+  useHistory,
+  Navigate,
+  Outlet,
+
+} from "react-router-dom";
 
 // import countries from "./countries";
 
@@ -54,7 +64,12 @@ const requiredValidator = (value) => {
   return value ? "" : "Ce champ est requis ! ";
 }
 
+
+
 function MyForm() {
+
+    const navigate = useNavigate();
+  
   const handleSubmit = (data) => {
     console.log(`
       Nom: ${data.name}
@@ -62,12 +77,12 @@ function MyForm() {
       Email: ${data.email}
       Mot de Passe: ${data.password}
       Accepted Terms: ${data.acceptedTerms}
-
     `);
-
+    navigate('/quizz');
   }
 
   return (
+    <div className="forminscri">
     <Form
       onSubmit={handleSubmit}
       render={(formRenderProps) => (
@@ -109,11 +124,12 @@ function MyForm() {
             component={CustomCheckbox}
             validator={requiredValidator} />
 
-          <button disabled={!formRenderProps.allowSubmit}>
-            Envoyer !
+          <button disabled={!formRenderProps.allowSubmit} >
+            Envoyer ! 
           </button>
         </form>
       )}>
     </Form>
+    </div>
   );
 }export default MyForm

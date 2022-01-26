@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import {questions} from '../data/QuestionData';
+import '../styles/QuestionStyle.css';
+
 
 function Questions(){
     
