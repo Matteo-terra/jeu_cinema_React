@@ -82,16 +82,31 @@ function MyForm() {
     const navigate = useNavigate();
   
   const handleSubmit = (data) => {
+    var name = data.name
+    var prenom = data.prenom
+    var email = data.email
+    var tel = data.tel
+    var password = data.password
+    var acceptedTerms = data.acceptedTerms
+
+    localStorage.setItem("name", name)
+    localStorage.setItem("prenom", prenom)
+    localStorage.setItem("email", email)
+   
     console.log(`
-      Nom: ${data.name}
-      Prénom: ${data.prenom}
-      Email: ${data.email}
-      Téléphone: ${data.tel}
-      Mot de Passe: ${data.password}
-      Accepted Terms: ${data.acceptedTerms}
+      Nom: ${name}
+      Prénom: ${prenom}
+      Email: ${email}
+      Téléphone: ${tel}
+      Mot de Passe: ${password}
+      Accepted Terms: ${acceptedTerms}
     `);
+    
     navigate('/quizz');
   }
+
+
+
 
   return (
     <div className="forminscri">

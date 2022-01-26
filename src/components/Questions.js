@@ -21,8 +21,15 @@ function Questions(){
             setShowScore(true);
         }
     };
+    var prenom = localStorage.getItem("prenom", prenom)
 
+    
     return (
+        <div>
+        <div className="labelQuizz">
+        A toi de jouer {prenom} !
+        </div>
+        <br/>
         <div className='app'>
             {showScore ? (
                 <div className='score-section'>
@@ -44,6 +51,8 @@ function Questions(){
                 </>
             )}
         </div>
+      
+    </div>
     );
 }
 
