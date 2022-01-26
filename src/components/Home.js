@@ -6,7 +6,7 @@ import '../styles/Home.css'
 
 function Home() {
     return (
-        <div>
+        <div className="homepage">
         <header>
             <h1>Le Quizz pas fou</h1>
         </header>

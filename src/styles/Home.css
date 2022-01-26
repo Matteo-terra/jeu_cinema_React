@@ -3,7 +3,7 @@
   }
   
 
-body {
+.homepage {
     font-family: Lato;
     height: 97vh;
     width: 100%;
@@ -11,5 +11,5 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #993333;
+   
   } 
