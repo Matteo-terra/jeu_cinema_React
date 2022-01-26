@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import "../Style/Style.css";
+import FilmDetail from './FilmDetail';
+
 
 function InTheaterFilms() {
     const [films, setFilms] = useState(null);
+    const [show, setShow] = useState(false);
 
     const imdbBaseURL = "https://imdb-api.com/en/API/";
     const apiTitle = "ComingSoon/";
@@ -34,15 +37,24 @@ function InTheaterFilms() {
             const Date = film.releaseState
             const authors = film.directors
             const image = film.image
+            const titre = film.title
 
             return (
               <div className="film" key={index}>
                 <h2>{film.title}</h2>
 
                 <div className="details">
-                    <img src= {image} />
+                    <img src= {image} onClick={() => setShow(true)} />
                     <p>👨: {authors}</p>
                     <p>⏰: {Date}</p>
+                    <FilmDetail title={titre} onClose={() => setShow(false)} show={show}>
+                      <ul>
+                        <li>Genre : Action</li>
+                        <li>Année : 2021</li>
+                        <li>Despriction : Un film Netflix</li>
+                        <li>Rang RT : 37%</li>
+                      </ul>
+                    </FilmDetail>
                 </div>
               </div>
             );
