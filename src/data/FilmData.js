@@ -6,7 +6,7 @@ export const filmDetail = [
         Description : 'Film Netflix',
         Rang : 37,
     },
-    {
+   /* {
         Nom : 'Spider-man No way home',
         Genre : 'Action',
         Annee : '2021',
@@ -26,5 +26,5 @@ export const filmDetail = [
         Annee : 2021,
         Description : 'Film Sympa',
         Rang : 80,
-    }
+    }*/
 ]
