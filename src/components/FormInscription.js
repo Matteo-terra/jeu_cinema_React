@@ -15,6 +15,8 @@ import {Routes,
 
 } from "react-router-dom";
 
+import { inscrits } from "../data/InscritsData";
+
 // import countries from "./countries";
 
 const CustomInput = ({ fieldType, ...others }) => {
@@ -64,6 +66,15 @@ const requiredValidator = (value) => {
   return value ? "" : "Ce champ est requis ! ";
 }
 
+const checkListMail = (value) => {
+  if (inscrits.includes(value)){
+    return "Adresse mail déjà existante"
+  };
+    }
+  
+    const telValidator = (value) => (
+      new RegExp(/^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$/).test(value) ? "" : "Entrez un numéro de téléphone valide."
+    );
 
 
 function MyForm() {
@@ -75,6 +86,7 @@ function MyForm() {
       Nom: ${data.name}
       Prénom: ${data.prenom}
       Email: ${data.email}
+      Téléphone: ${data.tel}
       Mot de Passe: ${data.password}
       Accepted Terms: ${data.acceptedTerms}
     `);
@@ -108,7 +120,14 @@ function MyForm() {
             name="email"
             fieldType="email"
             component={CustomInput}
-            validator={[requiredValidator, emailValidator]} />
+            validator={[requiredValidator, emailValidator, checkListMail]} />
+
+          <Field
+            label="Téléphone"
+            name="tel"
+            fieldType="tel"
+            component={CustomInput}
+            validator={[requiredValidator, telValidator]} />
           
           <Field
             label="Mot de Passe"

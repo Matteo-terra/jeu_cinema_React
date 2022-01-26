@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import "../Style/Style.css";
+import "../styles/InTheaterStyle.css";
 import FilmDetail from './FilmDetail';
 
 
