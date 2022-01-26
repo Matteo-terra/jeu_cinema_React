@@ -7,12 +7,16 @@ import '../styles/Home.css'
 function Home() {
     return (
         <div>
-        <header>
-            <h1>Le Quizz pas fou</h1>
-        </header>
-        <nav>
-          <Link to="/inscription">Je m'inscris</Link>
-        </nav>
+
+          <header>
+            <h1>Bienvenue sur le Quiz !</h1>
+          </header>
+          <div class="inscription">
+            <nav>
+              <Link to="/inscription">Je m'inscris</Link>
+            </nav>
+          </div>
+        
         </div>
   
     );

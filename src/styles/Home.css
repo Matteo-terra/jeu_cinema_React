@@ -13,3 +13,10 @@ body {
     align-items: center;
     background-color: #993333;
   } 
+
+.inscription {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
