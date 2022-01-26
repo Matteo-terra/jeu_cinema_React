@@ -50,7 +50,7 @@ function Questions(){
                     </div>
                     <div className='redirect-film'>
                         <nav>
-                            <Link to="/Filmd">Voir la liste de films</Link>
+                            <Link to="/listeFilm">Voir la liste de films</Link>
                         </nav>
                     </div>
                 </div>
