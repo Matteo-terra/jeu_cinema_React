@@ -1,6 +1,6 @@
 export const questions = [
     {
-        questionText: "'Quelle est la capitale de la France?",
+        questionText: "Quelle est la capitale de la France?",
         answerOptions: [
             { answerText: 'New York', isCorrect: false },
             { answerText: 'London', isCorrect: false },
@@ -9,12 +9,12 @@ export const questions = [
         ],
     },
     {
-        questionText: "Qui est de PDG de SpaceX?",
+        questionText: "Quel est le surnom de Mattéo?",
         answerOptions: [
-            { answerText: 'Jeff Bezos', isCorrect: false },
-            { answerText: 'Elon Musk', isCorrect: true },
+            { answerText: "Ma t'es haut genre descends", isCorrect: false },
+            { answerText: 'Mattoé', isCorrect: true },
             { answerText: 'Bill Gates', isCorrect: false },
-            { answerText: 'Tony Stark', isCorrect: false },
+            { answerText: 'Le BG de la street', isCorrect: false },
         ],
     },
     {
