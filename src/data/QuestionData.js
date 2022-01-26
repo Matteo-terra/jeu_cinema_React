@@ -1,38 +1,47 @@
 export const questions = [
     {
-        id: 1,
-        question: "Quelle est la capitale de la France?",
-        reponse: "Paris",
-        choix: ["Lisbone","Paris","Berlin","Madrid"]
-        
+        questionText: "'Quelle est la capitale de la France?",
+        answerOptions: [
+            { answerText: 'New York', isCorrect: false },
+            { answerText: 'London', isCorrect: false },
+            { answerText: 'Paris', isCorrect: true },
+            { answerText: 'Dublin', isCorrect: false },
+        ],
     },
     {
-        id: 2,
-        question: "Quelle est le surnom de Thomas",
-        reponse: "Gilles Merguez",
-        choix: ["Daryl","Toto","Gilles Merguez","Trop de respect, pas de surnom"]
-        
+        questionText: "Qui est de PDG de SpaceX?",
+        answerOptions: [
+            { answerText: 'Jeff Bezos', isCorrect: false },
+            { answerText: 'Elon Musk', isCorrect: true },
+            { answerText: 'Bill Gates', isCorrect: false },
+            { answerText: 'Tony Stark', isCorrect: false },
+        ],
     },
     {
-        id: 3,
-        question: "Comment s'appelle l'enfant de la vache",
-        reponse: "Le Veau",
-        choix: ["Le Taureau","Le Vacheton","Le Bébé Vache","Le Veau"]
-        
+        questionText: "Quelle marque est auteur de l'Iphone?",
+        answerOptions: [
+            { answerText: 'Apple', isCorrect: true },
+            { answerText: 'Intel', isCorrect: false },
+            { answerText: 'Amazon', isCorrect: false },
+            { answerText: 'Microsoft', isCorrect: false },
+        ],
     },
     {
-        id: 4,
-        question: "Quelle est la capitale de la France?",
-        reponse: "Paris",
-        choix: ["Lisbone","Paris","Berlin","Madrid"]
-        
+        questionText: "Combien y a-t-il de chapitre d'Harry Potter?",
+        answerOptions: [
+            { answerText: '1', isCorrect: false },
+            { answerText: '4', isCorrect: false },
+            { answerText: '6', isCorrect: false },
+            { answerText: '7', isCorrect: true },
+        ],
     },
     {
-        id: 5,
-        question: "Quelle est la capitale de la France?",
-        reponse: "Paris",
-        choix: ["Lisbone","Paris","Berlin","Madrid"]
-        
-    }
-    
-]
+        questionText: "Comment s'appelle l'enfant de la vache?",
+        answerOptions: [
+            { answerText: 'Le bébé vache', isCorrect: false },
+            { answerText: 'Le taureau', isCorrect: false },
+            { answerText: 'Le vacheton', isCorrect: false },
+            { answerText: 'Le veau', isCorrect: true },
+        ],
+    },
+];
