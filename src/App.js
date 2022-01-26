@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Form from './components/Form';
+import MyForm from './components/FormInscription';
 
 function App() {
   return (
     <div >
-      <Form />
+      <MyForm />
     </div>
   );
 }
