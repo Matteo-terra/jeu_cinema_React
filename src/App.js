@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import MyForm from './components/FormInscription';
+import Quesions from './components/Questions';
 
 function App() {
   return (
-    <div >
-      <MyForm />
+    <div className="App">
+      <Quesions />
+
     </div>
   );
 }
