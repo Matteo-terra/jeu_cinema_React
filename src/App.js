@@ -1,13 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-import Quesions from './components/Questions';
+import Questions from './components/Questions';
+import MyForm from './components/FormInscription';
+import { Routes, Route, Link } from "react-router-dom";
+import Home from './components/Home';
 
 function App() {
   return (
-    <div className="App">
-      <Quesions />
-
-    </div>
+    <div> 
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="inscription" element={<MyForm/>} />
+      <Route path="quizz" element={<Questions/>} />
+    </Routes>
+  </div>
   );
 }
 
