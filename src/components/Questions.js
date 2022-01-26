@@ -46,7 +46,7 @@ function Questions(){
             {showScore ? (
                 <div>     
                     <div className='score-section'>
-                        You scored {score} out of {questions.length}
+                        Vous avez eu {score} / {questions.length}
                     </div>
                     <div className='redirect-film'>
                         <nav>

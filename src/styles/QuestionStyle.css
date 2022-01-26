@@ -37,6 +37,14 @@ body {
   align-items: center;
 }
 
+.redirect-film {
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
 .labelQuizz{
   align-self: center;
   text-align: center;
