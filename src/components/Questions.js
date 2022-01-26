@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {questions} from '../data/QuestionData';
 import '../styles/QuestionStyle.css';
+import { Routes, Route, Link } from "react-router-dom";
 
 
 function Questions(){
@@ -15,6 +16,7 @@ function Questions(){
         }
     
         const nextQuestion = currentQuestion + 1;
+        
         if (nextQuestion < questions.length) {
             setCurrentQuestion(nextQuestion);
         } else {
@@ -22,11 +24,28 @@ function Questions(){
         }
     };
 
+    const backQuestion = () => {
+        const previousQuestion = currentQuestion - 1;
+
+        if (currentQuestion > 0) {
+            setCurrentQuestion(previousQuestion);
+        } else {
+            setShowScore(false);
+        }
+    }
+
     return (
         <div className='app'>
             {showScore ? (
-                <div className='score-section'>
-                    You scored {score} out of {questions.length}
+                <div>     
+                    <div className='score-section'>
+                        You scored {score} out of {questions.length}
+                    </div>
+                    <div className='redirect-film'>
+                        <nav>
+                            <Link to="/Filmd">Voir la liste de films</Link>
+                        </nav>
+                    </div>
                 </div>
             ) : (
                 <>
@@ -40,6 +59,9 @@ function Questions(){
                         {questions[currentQuestion].answerOptions.map((answerOption) => (
                             <button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
                         ))}
+                        <div>
+                        <button class="back" onClick={() => backQuestion()}>Question précédente</button>
+                        </div>
                     </div>
                 </>
             )}

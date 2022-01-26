@@ -51,6 +51,10 @@ body {
   font-size: 28px;
 }
 
+.back {
+  background-color: #458fc0;
+}
+
 .question-text {
   margin-bottom: 12px;
 }
