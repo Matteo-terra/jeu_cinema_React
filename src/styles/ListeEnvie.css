@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
+.listeEnvie {
+    text-align: center;
+    margin: auto;
+}
+
+.panierFilms {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.panierFilm {
+    background: #fff;
+    position: relative;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    min-width: 47%;
+    color: #333;
+    background-color: rgb(165, 230, 230);
+}
