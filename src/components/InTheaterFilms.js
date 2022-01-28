@@ -92,10 +92,10 @@ function InTheaterFilms() {
                   
                     <FilmDetail title={titre} onClose={() => setShow(false)} show={show}>
                       <ul>
-                        <li>Genre : Action</li>
-                        <li>Année : 2021</li>
-                        <li>Despriction : Un film Netflix</li>
-                        <li>Rang RT : 37%</li>
+                        <li>Genre : {film.genres}</li>
+                        <li>Année : {film.year}</li>
+                        <li>Despriction : {film.plot}</li>
+                        <li>Rang RT : Film not out yet </li>
                       </ul>
                     </FilmDetail>
                 </div>
