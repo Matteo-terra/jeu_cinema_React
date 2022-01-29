@@ -1,21 +1,23 @@
-import "../styles/ListeEnvie.css";
+import "../styles/ListeEnvie_Recap.css";
 
 function ListeEnvieBoucle() {
-    var compteurNbFilm = 1;
-    const nbBonneReponses = 3;
+    var nombreFilms = 1;
+    var nbBonneReponses = localStorage.getItem("score", nbBonneReponses);
     var list = [];
     var listFinal = [];
-    var id = 1;
 
-    while (compteurNbFilm <= nbBonneReponses) {
-        const numFilmTitre = "titre " + compteurNbFilm;
-        const numFilmImg = "image " + compteurNbFilm;
-        console.log("Le compteurNbFilm était à " + compteurNbFilm)
+    var compteurFilm = localStorage.getItem("compteur", compteurFilm);
+
+
+    while (nombreFilms <= nbBonneReponses) {
+        const numFilmTitre = "titre " + nombreFilms;
+        const numFilmImg = "image " + nombreFilms;
+        console.log("Le nombreFilms était à " + nombreFilms)
         var titre = localStorage.getItem(numFilmTitre, titre);
         var imageURL = localStorage.getItem(numFilmImg, imageURL);
-        compteurNbFilm ++
-        console.log("Le compteurNbFilm est maintenant à " + compteurNbFilm)
-        const numFilm = compteurNbFilm - 1
+        nombreFilms ++
+        console.log("Le nombreFilms est maintenant à " + nombreFilms)
+        const numFilm = nombreFilms - 1
         if (titre != null) {
             list = listFinal.push({titreList: titre, imageUrlList: imageURL, numFilmTitreList: numFilmTitre, numFilmImgList: numFilmImg})
         }
@@ -26,11 +28,14 @@ function ListeEnvieBoucle() {
         localStorage.removeItem(numFilmTitre);
         localStorage.removeItem(numFilmImgList);
         window.location.reload(false);
+
+        compteurFilm --
+        localStorage.setItem("compteur", compteurFilm)
     }
     
     function handleClickSuppAll() {
-        var arr = []; // Array to hold the keys
-        // Iterate over localStorage and insert the keys that meet the condition into arr
+        var arr = []; // Array qui contient les keys
+        // Itérer dans localStorage et insérer les keys qui répondent aux conditions dans l'array
         for (var i = 0; i < localStorage.length; i++){
             if (localStorage.key(i).substring(0,5) == "titre") {
                 arr.push(localStorage.key(i));
@@ -39,10 +44,12 @@ function ListeEnvieBoucle() {
             }
         }
 
-        // Iterate over arr and remove the items by key
+        // Itérer dans l'array et supprimer les items en fonction de leur key
         for (var i = 0; i < arr.length; i++) {
             localStorage.removeItem(arr[i]);
         }
+
+        localStorage.removeItem("compteur");
 
         window.location.reload(false);
     }
@@ -55,11 +62,11 @@ function ListeEnvieBoucle() {
                         {listElement.titreList}
                     </p>
                     <img src= {listElement.imageUrlList}/>
-                    <button onClick={() => handleClickSupp(listElement.numFilmTitreList, listElement.numFilmImgList)}>Supprimer de ma liste d'envie</button>
+                    <button className="supp-button" onClick={() => handleClickSupp(listElement.numFilmTitreList, listElement.numFilmImgList)}>Supprimer de ma liste d'envie</button>
                 </div>
                 
             ))}
-            <button onClick={() => handleClickSuppAll()}>Vider la liste d'envie</button>
+            <button className="suppAll-button" onClick={() => handleClickSuppAll()}>Vider la liste d'envie</button>
         </div>
     );
 }

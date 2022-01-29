@@ -10,10 +10,15 @@ function Questions(){
     const [showScore, setShowScore] = useState(false);
     const [score, setScore] = useState(0);
     
-    const handleAnswerOptionClick = (isCorrect) => {
+    const handleAnswerOptionClick = (isCorrect, id) => {
         if (isCorrect) {
             setScore(score + 1);
+            localStorage.setItem("score", score + 1);
+            localStorage.setItem("answer" + id, "right");
+        } else {
+            localStorage.setItem("answer" + id, "false");
         }
+        console.log("le score est de " + score)
     
         const nextQuestion = currentQuestion + 1;
         
@@ -28,8 +33,17 @@ function Questions(){
     
     const backQuestion = () => {
         const previousQuestion = currentQuestion - 1;
+        console.log(currentQuestion)
 
-        if (currentQuestion > 0) {
+        var answerResponse = localStorage.getItem("answer" + currentQuestion, answerResponse);
+
+        if (currentQuestion > 0 && answerResponse === "right") {
+            setCurrentQuestion(previousQuestion);
+            
+            setScore(score - 1);
+            console.log("le score est de " + score)
+            localStorage.setItem("score", score - 1);
+        } else if (currentQuestion > 0 && answerResponse === "false") {
             setCurrentQuestion(previousQuestion);
         } else {
             setShowScore(false);
@@ -46,7 +60,7 @@ function Questions(){
             {showScore ? (
                 <div>     
                     <div className='score-section'>
-                        Vous avez eu {score} / {questions.length}
+                        <p>Vous avez eu {score} / {questions.length}</p>
                     </div>
                     <div className='redirect-film'>
                         <nav>
@@ -63,11 +77,12 @@ function Questions(){
                         <div className='question-text'>{questions[currentQuestion].questionText}</div>
                     </div>
                     <div className='answer-section'>
+                        
                         {questions[currentQuestion].answerOptions.map((answerOption) => (
-                            <button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+                            <button onClick={() => handleAnswerOptionClick(answerOption.isCorrect, questions[currentQuestion].id)}>{answerOption.answerText}</button>
                         ))}
                         <div>
-                        <button class="back" onClick={() => backQuestion()}>Question précédente</button>
+                        <button className="back" onClick={() => backQuestion()}>Question précédente</button>
                         </div>
                     </div>
                 </>

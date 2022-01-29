@@ -27,12 +27,11 @@ function InTheaterFilms() {
     }
     
     var compteur = 0;
-    const nbBonneReponses = 3;
+    var nbBonneReponses = localStorage.getItem("score", nbBonneReponses);
   
     return (
         <div className="App">
         <h1>Films a l'affiche</h1>
-        <h2>Fetch the list from IMDB API and display it</h2>
 
         {/* Fetch data from API */}
         <div>
@@ -58,26 +57,22 @@ function InTheaterFilms() {
 
             function handleClickAdd(titre, imageURL) {
               console.log("le compteur était à " + compteur)
-              if (compteur < nbBonneReponses) {
+              if (addButtonText === "Ajouter à ma liste d'envie" && compteur < nbBonneReponses) {
                 compteur ++
+
                 localStorage.setItem("titre " + compteur, titre)
                 localStorage.setItem("image " + compteur, imageURL)
+                localStorage.setItem("compteur", compteur)
+
+                alert("Le film a bien été ajouté à votre liste d'envie, il vous reste "+ (nbBonneReponses - compteur) +" film(s) à sélectionner")
+                addButtonText = "Supprimer de ma liste d'envie"
+              } else if (addButtonText === "Supprimer de ma liste d'envie") {
+                alert("Le film a déjà été ajouté à votre liste d'envie, il vous reste "+ (nbBonneReponses - compteur) +" film(s) à sélectionner")
               } else {
                 alert("Le nombre maximum de films pouvant être sélectionnés (égal à votre nombre de bonnes réponses -> " + nbBonneReponses + ") à été atteint!")
               }
               console.log("il est maintenant à " + compteur)
-        
-              if (addButtonText === "Ajouter à ma liste d'envie") {
-                //updateAddButtonText("Supprimer de ma liste d'envie")
-                alert("Le film a bien été ajouté à ma liste d'envie")
-                addButtonText = "Supprimer de ma liste d'envie"
-                console.log(addButtonText)
-              } else {
-                addButtonText = "Ajouter à ma liste d'envie"
-                console.log(addButtonText)
-              }
             }
-            console.log("test : " + addButtonText)
 
             return (
               <div className="film" key={index}>
@@ -87,15 +82,15 @@ function InTheaterFilms() {
                     <img src= {image} onClick={() => setShow(true)} />
                     <p>👨: {authors}</p>
                     <p>⏰: {Date}</p>
-                    {(addButtonText === "Ajouter à ma liste d'envie") && <button onClick={() => handleClickAdd(titre, image)}>Ajouter à ma liste d'envie</button>}
+                    {(addButtonText === "Ajouter à ma liste d'envie") && <button onClick={() => handleClickAdd(titre, image)}>Je veux le voir</button>}
                     {(addButtonText === "Supprimer de ma liste d'envie") && <button onClick={() => handleClickAdd(titre, image)}>Supprimer de ma liste d'envie</button>}
                   
                     <FilmDetail title={titre} onClose={() => setShow(false)} show={show}>
                       <ul>
-                        <li>Genre : Action</li>
-                        <li>Année : 2021</li>
-                        <li>Despriction : Un film Netflix</li>
-                        <li>Rang RT : 37%</li>
+                        <li>Genre : {film.genres}</li>
+                        <li>Année : {film.year}</li>
+                        <li>Description : {film.plot}</li>
+                        <li>Rang RT : Film not out yet </li>
                       </ul>
                     </FilmDetail>
                 </div>

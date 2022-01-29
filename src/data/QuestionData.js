@@ -7,6 +7,7 @@ export const questions = [
             { answerText: 'Paris', isCorrect: true },
             { answerText: 'Dublin', isCorrect: false },
         ],
+        id: 1,
     },
     {
         questionText: "Quel est le surnom de Mattéo?",
@@ -16,6 +17,7 @@ export const questions = [
             { answerText: 'Bill Gates', isCorrect: false },
             { answerText: 'Le BG de la street', isCorrect: false },
         ],
+        id: 2,
     },
     {
         questionText: "Quelle marque est auteur de l'Iphone?",
@@ -25,6 +27,7 @@ export const questions = [
             { answerText: 'Amazon', isCorrect: false },
             { answerText: 'Microsoft', isCorrect: false },
         ],
+        id: 3,
     },
     {
         questionText: "Combien y a-t-il de chapitre d'Harry Potter?",
@@ -34,6 +37,7 @@ export const questions = [
             { answerText: '6', isCorrect: false },
             { answerText: '7', isCorrect: true },
         ],
+        id: 4,
     },
     {
         questionText: "Comment s'appelle l'enfant de la vache?",
@@ -43,5 +47,6 @@ export const questions = [
             { answerText: 'Le vacheton', isCorrect: false },
             { answerText: 'Le veau', isCorrect: true },
         ],
+        id: 5,
     },
 ];

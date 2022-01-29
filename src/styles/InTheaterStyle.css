@@ -49,7 +49,7 @@
     margin: 10px;
     width: 47%;
     color: #333;
-    flex-basis: width;
+    flex-basis: auto;
     background-color: rgb(165, 230, 230);
   }
   

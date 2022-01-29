@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+
+.listeEnvie {
+    text-align: center;
+    margin: auto;
+}
+.recap {
+    text-align: center;
+    margin: auto;
+}
+.remerciement {
+    text-align: center;
+    margin: auto;
+}
+
+.panierFilms {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.panierFilm {
+    background: #fff;
+    position: relative;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    min-width: 47%;
+    color: #333;
+    background-color: rgb(165, 230, 230);
+}
+
+.recapFilms {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.recapFilm {
+    background: #fff;
+    position: relative;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    min-width: 47%;
+    color: #333;
+    background-color: rgb(165, 230, 230);
+}
+
+.suppAll-button {
+    background-color: rgb(182, 72, 72);
+    color: rgb(15, 66, 54);
+}
+.suppAll-button:hover {
+    background-color: rgb(156, 16, 27);
+}
+.supp-button {
+    background-color: rgb(182, 72, 72);
+    color: rgb(15, 66, 54);
+}
+.supp-button:hover {
+    background-color: rgb(156, 16, 27);
+}
+
+.recapButton {
+    background-color: rgb(54, 202, 165);
+    color: rgb(15, 66, 54);
+    background-color: rgb(40, 209, 209);
+}
+
+#validateCheck {
+    width: auto;
+    display: inline-block;
+}
+#validateLabel {
+    color: rgb(255, 255, 255);
+}
+#validateButton {
+    margin-top: 5px;
+    margin-bottom: 1em;
+}
+
+.pageHeader {
+    margin-bottom: 3em;
+}
